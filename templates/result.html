@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Predictions</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+
+        h1 {
+            margin-top: 50px;
+            font-size: 36px;
+            color: #333;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        li {
+            background-color: #fff;
+            margin: 20px auto;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1);
+            max-width: 600px;
+            text-align: left;
+            transition: transform 0.3s ease;
+        }
+
+        li:hover {
+            transform: scale(1.02);
+            box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.2);
+        }
+
+        a {
+            text-decoration: none;
+            color: #007bff;
+            font-weight: bold;
+            margin-top: 20px;
+            display: block;
+            transition: color 0.3s ease;
+        }
+
+        a:hover {
+            color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <h1>Movie Predictions</h1>
+    <ul>
+        {% for prediction in predictions %}
+        <li>
+            <strong>Movie Name:</strong> {{ prediction.movie_name }}<br>
+            <strong>Description:</strong> {{ prediction.description }}<br>
+            <strong>Prediction Label:</strong> {{ prediction.prediction }}
+        </li>
+        {% endfor %}
+    </ul>
+    <a href="/">Back to Home</a>
+</body>
+</html>
